@@ -14,6 +14,6 @@ class ApiAuthenticate
         if (Auth::guard('api')->check()) {
             return $next($request);
         }
-        return response()->json(['message' => Config::get('unauthorized')], 401);
+        return response()->json(['message' => Config::get('global.message.unauthorized')], 401);
     }
 }

@@ -26,6 +26,7 @@ class UserRepository
         $data['image_url'] = $request['picture'];
         $data['email'] = $request['email'];
         $data['google_id'] = $request['id'];
+        $data['picture'] = $request['picture'];
         $user = $this->users->create($data);
         return $user;
     }

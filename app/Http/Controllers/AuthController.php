@@ -42,8 +42,9 @@ class AuthController extends Controller
     {
         $user = auth()->user();
         if (empty($user)) {
-            return response()->json(['message' => Config::get('unauthorized'), 401]);
+            return response()->json(['message' => Config::get('global.message.unauthorized')]);
         }
+        $user->name = "{$user->firstname} {$user->lastname}";
         return response()->json(auth()->user());
     }
 
